@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # When you create a new application, create a urls.py file for it
+    ###
+    # Make sure you have updated settings.py for each app listed below
     path('', include('pages.urls')),
+    path('listing/', include('listings.urls')),
     path('admin/', admin.site.urls)
 ]

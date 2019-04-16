@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # PagesConfig is the class name from pages/apps.py
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
+    # Always include the classname of an application here!
+    # Check that you have updated the application and project urls.py
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
