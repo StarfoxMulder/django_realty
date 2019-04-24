@@ -21,6 +21,6 @@ urlpatterns = [
     ###
     # Make sure you have updated settings.py for each app listed below
     path('', include('pages.urls')),
-    path('listing/', include('listings.urls')),
-    path('admin/', admin.site.urls)
+    path('listings/', include('listings.urls')),
+    path('admin/', admin.site.urls),
 ]
