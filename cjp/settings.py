@@ -131,3 +131,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'cjp/static')
 ]
+
+# Media Folder settings
+# Creates /media/ and joins it as part of the path for where uploaded files
+# that are assocaited with new model objects are stored
+# in listings/models.py you can see the 'photos/%Y/%m/%d/' regular expression
+# for putting images into '/media/photos/[upload date]' folder
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

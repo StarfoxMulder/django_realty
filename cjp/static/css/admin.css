@@ -1,0 +1,28 @@
+#header {
+  height: 50px;
+  background: #10284e;
+  color: #fff;
+}
+
+#branding h1 {
+  color: #fff;
+}
+
+.module caption {
+  background: #10284e;
+  color: #fff;
+}
+
+a:link,
+a:visited {
+  color: #10284e;
+}
+
+div.breadcrumbs {
+  background: #30caa0;
+}
+
+#listing_form>div>div>input[type="submit"] {
+  background: #10284e;
+  color: #fff;
+}
