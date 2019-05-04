@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Be sure to load external applications in the file where they are used
+    # eg. /templates/listings/listings.html
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
