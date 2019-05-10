@@ -22,7 +22,11 @@ urlpatterns = [
     # When you create a new application, create a urls.py file for it
     ###
     # Make sure you have updated settings.py for each app listed below
+    ###
+    # Any path that has 'app_name/' in it will use the routes from
+    # app_name/urls.py
     path('', include('pages.urls')),
     path('listings/', include('listings.urls')),
+    path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

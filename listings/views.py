@@ -68,11 +68,11 @@ def search(request):
 
     # Search for bedroom, case insensitive.
     # lte == less than or equal to, so up to the number put in
-    if 'bedroom' in request.GET:
-        bedroom = request.GET['bedroom']
-        if bedroom:
+    if 'bedrooms' in request.GET:
+        bedrooms = request.GET['bedrooms']
+        if bedrooms:
             queryset_list = queryset_list.filter(
-                bedroom__lte=bedroom)
+                bedrooms__lte=bedrooms)
 
     # Search for bedroom, case insensitive.
     # lte == less than or equal to, so up to the number put in
@@ -91,6 +91,8 @@ def search(request):
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
-        "listings": queryset_list
+        'listings': queryset_list,
+        'values': request.GET
+        # 'values' included to have form field selections persist
     }
     return render(request, 'listings/search.html', context)
