@@ -1,6 +1,10 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from .choices import price_choices, bedroom_choices, state_choices
+# Importing the choices dictionaries to load into listings/search.html
+# Since we're already in the listings app we can simply use .choices
+
 
 # fetching data for passing into view
 from .models import Listing
@@ -35,4 +39,18 @@ def listing(request, listing_id):
 
 
 def search(request):
-    return render(request, 'listings/search.html')
+    queryset_list = Listing.objects.order_by('-list_date')
+
+    # Set this up later with results pagination
+
+    #paginator = Paginator(listings, 3)
+    #page = request.GET.get('page')
+    #paged_listings = paginator.get_page(page)
+
+    context = {
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices,
+        'price_choices': price_choices,
+        "listings": queryset_list
+    }
+    return render(request, 'listings/search.html', context)

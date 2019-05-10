@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from listings.choices import price_choices, bedroom_choices, state_choices
+# Importing the choice dictionaries from listings/choices.py
 
 from listings.models import Listing
 from realtors.models import Realtor
@@ -15,7 +17,10 @@ def index(request):
     # Assign Listings to the Listing model, order des by list date, show only published listings, and limit the results to 3
 
     context = {
-        'listings': listings
+        'listings': listings,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices,
+        'price_choices': price_choices,
     }
     # Passing the listings into 'pages/index.html'; after this, go to 'pages.index.html' to loop through the dictonary of listings passed into that page as part of this response
     return render(request, 'pages/index.html', context)
