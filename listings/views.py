@@ -41,8 +41,48 @@ def listing(request, listing_id):
 def search(request):
     queryset_list = Listing.objects.order_by('-list_date')
 
-    # Set this up later with results pagination
+    # the values in '' below == the name field of the select dropdown in the search form
 
+    # Search description for keywords
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            queryset_list = queryset_list.filter(
+                description__icontains=keywords)
+
+    # Search for city, case insensitive.
+    # for case sensitive use 'exact' instead of 'iexact'
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            queryset_list = queryset_list.filter(
+                city__iexact=city)
+
+    # Search for state, case insensitive.
+    # for case sensitive use 'exact' instead of 'iexact'
+    if 'state' in request.GET:
+        state = request.GET['state']
+        if state:
+            queryset_list = queryset_list.filter(
+                state__iexact=state)
+
+    # Search for bedroom, case insensitive.
+    # lte == less than or equal to, so up to the number put in
+    if 'bedroom' in request.GET:
+        bedroom = request.GET['bedroom']
+        if bedroom:
+            queryset_list = queryset_list.filter(
+                bedroom__lte=bedroom)
+
+    # Search for bedroom, case insensitive.
+    # lte == less than or equal to, so up to the number put in
+    if 'price' in request.GET:
+        price = request.GET['price']
+        if price:
+            queryset_list = queryset_list.filter(
+                price__lte=price)
+
+    # Set this up later with results pagination
     #paginator = Paginator(listings, 3)
     #page = request.GET.get('page')
     #paged_listings = paginator.get_page(page)
