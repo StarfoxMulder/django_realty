@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 """
 Django settings for cjp project.
 
@@ -143,3 +144,8 @@ STATICFILES_DIRS = [
 # for putting images into '/media/photos/[upload date]' folder
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
