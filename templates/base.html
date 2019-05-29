@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <!-- Lightbox -->
   <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
-  <title>JP Real Estate</title>
+  <!-- Including the name of the current page in the title -->
+  <title>JP Real Estate {% block title %} {% endblock %}</title>
 </head>
 
 <body>
