@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     # Always include the classname of an application here!
     # Check that you have updated the application and project urls.py
     'django.contrib.admin',
@@ -149,3 +150,10 @@ MEDIA_URL = '/media/'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# Email Config
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'JudeP.Development@gmail.com'
+EMAIL_HOST_PASSWORD = 'judeEbloom321'
+EMAIL_USE_TLS = True
