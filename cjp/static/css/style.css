@@ -90,6 +90,15 @@ img {
 }
 
 .card-img-top {
+  height: auto;
+  /*height: 232px;*/
+}
+
+.rounded-circle {
+  max-height: 283px;
+}
+
+.listing-img {
   height: 232px;
 }
 
