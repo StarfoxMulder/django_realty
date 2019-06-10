@@ -91,7 +91,7 @@ img {
 
 .card-img-top {
   height: auto;
-  /*height: 232px;*/
+  /*max-height: 232px;*/
 }
 
 .rounded-circle {
@@ -99,7 +99,7 @@ img {
 }
 
 .listing-img {
-  height: 232px;
+  max-height: 232px;
 }
 
 @media (max-width: 991px) {
