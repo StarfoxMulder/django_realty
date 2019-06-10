@@ -157,3 +157,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'JudeP.Development@gmail.com'
 EMAIL_HOST_PASSWORD = 'judeEbloom321'
 EMAIL_USE_TLS = True
+
+# For Production settings
+try:
+    from .local_settings import *
+except ImportError:
+    pass
